@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Audio Recorder ✨</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        margin-top: 40px;
+        width: 420px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin-top: 0;
+        text-align: center;
+        color: #333;
+      }
+
+      label {
+        font-size: 15px;
+        color: #333;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+
+      button {
+        padding: 10px 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-right: 8px;
+        margin-top: 5px;
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      #startBtn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      #stopBtn {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      #sendBtn {
+        background-color: #007bff;
+        color: white;
+      }
+
+      h3 {
+        margin-top: 28px;
+        color: #444;
+      }
+
+      audio {
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      #correctedText {
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      #status {
+        margin-top: 20px;
+        font-style: italic;
+        color: #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Audio Recorder</h1>
+
+      <label>Email address:</label>
+      <input id="emailInput" type="email" placeholder="mail@example.com" />
+
+      <div>
+        <button id="startBtn">Start Recording</button>
+        <button id="stopBtn" disabled>Stop</button>
+        <button id="sendBtn" disabled>Send to Backend</button>
+      </div>
+
+      <h3>Original Recording</h3>
+      <audio id="player" controls></audio>
+
+      <h3>Corrected Audio</h3>
+      <audio id="correctedPlayer" controls></audio>
+
+      <h3>Corrected Text</h3>
+      <p><span id="correctedText"></span></p>
+
+      <p id="status"></p>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
